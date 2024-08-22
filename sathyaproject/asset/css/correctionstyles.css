@@ -1,0 +1,208 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Background and Theme */
+body {
+    background: url("./asset/images/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container Styling */
+.container {
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    transform: scale(0.9);
+    opacity: 0;
+    animation: fadeInScale 1s ease-out forwards;
+}
+
+/* Form Styling */
+.login-form {
+    text-align: center;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #8b0000; /* Dark red */
+    animation: fadeIn 1s ease-in;
+}
+
+/* Input Group Styling */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 10px;
+    background: rgba(255, 255, 255, 0.9); /* White background for inputs */
+    border: 2px solid #8b0000; /* Dark red border */
+    border-radius: 5px;
+    outline: none;
+    color: #8b0000;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: #8b0000;
+    font-size: 16px;
+}
+
+/* Button Styling */
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: #8b0000; /* Dark red */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background: #600000; /* Darker red */
+    transform: scale(1.05);
+}
+
+/* Links Styling */
+.links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between; /* Distributes links evenly */
+}
+
+.links a {
+    color: #8b0000; /* Dark red */
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #600000;
+}
+
+/* Animated Image Styling */
+.animated-image {
+    position: absolute;
+    top: 50vh;
+    right: 0px;
+    height: 150px;
+    animation: moveRight 5s linear infinite;
+}
+
+.animated-leaf1 {
+    position: absolute;
+    top: 0px;
+    right: 100px;
+    height: 50px;
+    animation: moveBottom 6s linear infinite;
+}
+
+.animated-leaf2 {
+    position: absolute;
+    top: 50px;
+    right: 200px;
+    height: 50px;
+    animation: moveBottom 7s linear infinite;
+}
+
+.animated-leaf3 {
+    position: absolute;
+    top: 50px;
+    left: 200px;
+    height: 50px;
+    animation: moveBottom 7s linear infinite;
+}
+
+.animated-leaf4 {
+    position: absolute;
+    top: 100px;
+    left: 300px;
+    height: 50px;
+    animation: moveBottom 8s linear infinite;
+}
+
+.girl-image {
+    position: absolute;
+    top: 50vh;
+    left: -100px;
+    height: 150px;
+    animation: moveLeftRight 10s ease-in-out infinite;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        right: -100px;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+@keyframes moveBottom {
+    0% {
+        top: -100px;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes moveLeftRight {
+    0% {
+        left: -100px;
+    }
+    50% {
+        left: calc(100% - 150px); /* Move the girl image to the right edge */
+    }
+    100% {
+        left: -100px; /* Return the girl image to the original position */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .container {
+        padding: 20px;
+    }
+}
